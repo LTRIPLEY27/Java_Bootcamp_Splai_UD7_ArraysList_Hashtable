@@ -25,10 +25,10 @@ public class Ejercicio1_AlumnesAverageApp {
 			String alumnesNotes = "", response;
 			Hashtable <String, String> alumnes = new Hashtable <String, String>();
 			
-			response = JOptionPane.showInputDialog("Desea cargar notas, indique (SI) o (NO) :  ");
+			//response = JOptionPane.showInputDialog("Desea cargar notas, indique (SI) o (NO) :  ");
 			
-			do {
-				response = JOptionPane.showInputDialog("Desea cargar notas, indique (SI) o (NO) :  ");
+			//do {
+				//response = JOptionPane.showInputDialog("Desea cargar notas, indique (SI) o (NO) :  ");
 				
 				String countNotes = JOptionPane.showInputDialog("Indique cantidad notas : ");
 				totalNotes = Integer.parseInt(countNotes);
@@ -39,15 +39,16 @@ public class Ejercicio1_AlumnesAverageApp {
 				alumnesNotes = String.valueOf(calculateAverage(totalNotes));
 				//createColection(nameAlumne, alumnesNotes);
 				alumnes.put(nameAlumne, alumnesNotes);
-			}while(response.equalsIgnoreCase("si".toLowerCase()));
+			//}while(response.equalsIgnoreCase("si".toLowerCase()));
 		
+				printColection(alumnes);
 			
 		}
 		
 		public static double calculateAverage(int totalNotes) {
 			int totalNote = 0, notes, calculateAverage;
 			
-			for(int i = 0; i < totalNotes; i++) {
+			for(int i = 1; i < totalNotes; i++) {
 				String noteAlumne = JOptionPane.showInputDialog("Indique nota : ");
 				notes = Integer.parseInt(noteAlumne);
 				totalNote += notes;
@@ -63,7 +64,8 @@ public class Ejercicio1_AlumnesAverageApp {
 			Enumeration <String> keys = alumnes.keys();
 			
 			while(elements.hasMoreElements() && keys.hasMoreElements()) { 
-				System.out.println("El promedio de notas el alumno " + keys.nextElement() + " es igual a = " + elements.nextElement());
+				//System.out.println("El promedio de notas el alumno " + keys.nextElement() + " es igual a = " + elements.nextElement());
+				JOptionPane.showMessageDialog(null, "El promedio de notas el alumno " + keys.nextElement() + " es igual a = " + elements.nextElement());
 			}
 		}
 		
