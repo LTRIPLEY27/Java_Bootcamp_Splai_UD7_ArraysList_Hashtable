@@ -1,5 +1,7 @@
 package packageJava.Ejercicio1;
-
+/**@author isabel Calzadilla
+ * Ejercicio 1 - UD7: CALCULAR PROMEDIO NOTAS
+ * **/
 import java.util.Enumeration;
 import java.util.Hashtable;
 
