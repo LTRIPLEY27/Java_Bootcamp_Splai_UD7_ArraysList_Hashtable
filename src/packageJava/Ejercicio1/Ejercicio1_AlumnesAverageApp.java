@@ -25,30 +25,27 @@ public class Ejercicio1_AlumnesAverageApp {
 			String alumnesNotes = "", response;
 			Hashtable <String, String> alumnes = new Hashtable <String, String>();
 			
-			//response = JOptionPane.showInputDialog("Desea cargar notas, indique (SI) o (NO) :  ");
+			response = JOptionPane.showInputDialog("Desea cargar notas, indique (SI) o (NO) :  ");
 			
-			//do {
-				//response = JOptionPane.showInputDialog("Desea cargar notas, indique (SI) o (NO) :  ");
-				
-				String countNotes = JOptionPane.showInputDialog("Indique cantidad notas : ");
-				totalNotes = Integer.parseInt(countNotes);
-				String nameAlumne = JOptionPane.showInputDialog("Indique alumno : ");
-				
-				calculateAverage(totalNotes);
-				
-				alumnesNotes = String.valueOf(calculateAverage(totalNotes));
-				//createColection(nameAlumne, alumnesNotes);
-				alumnes.put(nameAlumne, alumnesNotes);
-			//}while(response.equalsIgnoreCase("si".toLowerCase()));
-		
-				printColection(alumnes);
-			
+			if(response.equals("si")) {//EVALUA 
+				do {	
+					String countNotes = JOptionPane.showInputDialog("Indique cantidad notas : ");
+					totalNotes = Integer.parseInt(countNotes);
+					String nameAlumne = JOptionPane.showInputDialog("Indique alumno : ");
+					alumnesNotes = String.valueOf(calculateAverage(totalNotes));// CALCULA EL PROMEDIO CON EL MÉTODO Y ALMACENA EN LA VARIABLE 
+					alumnes.put(nameAlumne, alumnesNotes);//ENVIAN LAS CONDICIONES DEL HASHTABLE
+					response = JOptionPane.showInputDialog("Desea cargar notas, indique (SI) o (NO) :  ");
+				}while(response.equals("si"));//REALIZA LA CARGA MIENTRAS SEA SI
+					printColection(alumnes);
+			}else {
+				JOptionPane.showMessageDialog(null, "Hasta luego ...");//DE NO CUMPLIRSE CIERRA EL CICLO
+			}
 		}
 		
-		public static double calculateAverage(int totalNotes) {
+		public static double calculateAverage(int totalNotes) {// MÉTODO QUE CALCULA EL PROMEDIO INTRODUCIDO EN EL TECLADO
 			int totalNote = 0, notes, calculateAverage;
 			
-			for(int i = 1; i < totalNotes; i++) {
+			for(int i = 0; i < totalNotes; i++) {
 				String noteAlumne = JOptionPane.showInputDialog("Indique nota : ");
 				notes = Integer.parseInt(noteAlumne);
 				totalNote += notes;
@@ -57,15 +54,15 @@ public class Ejercicio1_AlumnesAverageApp {
 			
 			return calculateAverage;
 		}
-		
+		//MÉTODO QUE IMPRIME EL HASHTABLE CON LOS VALORES AL COMPLETO
 		public static void printColection(Hashtable <String, String> alumnes) {
 			
 			Enumeration <String> elements = alumnes.elements(); // ASIGNAMOS A LA VARIABLE ENUMERATION EL VALOR DE "alumnes.elements" PARA RECORRER VALORES
 			Enumeration <String> keys = alumnes.keys();
 			
-			while(elements.hasMoreElements() && keys.hasMoreElements()) { 
-				//System.out.println("El promedio de notas el alumno " + keys.nextElement() + " es igual a = " + elements.nextElement());
-				JOptionPane.showMessageDialog(null, "El promedio de notas el alumno " + keys.nextElement() + " es igual a = " + elements.nextElement());
+			while(elements.hasMoreElements() && keys.hasMoreElements()) { //CONDICIONAL PARA IMPRIMER AMBOS SIMULTANEAMENTE
+				System.out.println("El promedio de notas del alumno = " + keys.nextElement() + " es igual a = " + elements.nextElement());
+				//JOptionPane.showMessageDialog(null, "El promedio de notas el alumno " + keys.nextElement() + " es igual a = " + elements.nextElement());
 			}
 		}
 		
