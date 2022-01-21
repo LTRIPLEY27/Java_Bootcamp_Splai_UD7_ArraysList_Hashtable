@@ -6,24 +6,25 @@ import javax.swing.JOptionPane;
 public class DataBase {
 	
 	public static void start() {
-		Hashtable <String, Integer> products = new Hashtable<String, Integer>();
+	Hashtable <String, Integer> products = new Hashtable <String, Integer> ();
 		int cont = 0;
-		String question = JOptionPane.showInputDialog("Desea ingresar productos?").toLowerCase();
-		if(question.equals("si")) {
-			do {
+		//String question = JOptionPane.showInputDialog("Desea ingresar productos?");
+		for(int i = 0; i <= 3; i++) {
+		//if(question.equals("si")) {
+			//do {
 				String product = JOptionPane.showInputDialog("Indique el producto");
 				String quantity = JOptionPane.showInputDialog("Ingrese cantidad");
 				int cantidad = Integer.parseInt(quantity);
 				products.put(product, cantidad);
-				cont++;
-				question = JOptionPane.showInputDialog("Desea ingresar productos?");
-			}while(question.equals("si")  && cont < 4);
-		}else {
+				//products.put("chocolate", 8);
+				//products.put("helado", 8);
+				//cont++;
+			//}while(cont < 3);
+		}choice(products);
+		//}else {
 			JOptionPane.showMessageDialog(null, "Gracias, vuelva pronto");
-		}
-		
-		choice(products);
-	}
+		}	
+	//}
 	
 	public static void choice(Hashtable <String, Integer> products) {
 		String choice = JOptionPane.showInputDialog("Indique opcion: \n1. Buscar producto  \n2. Ver lista de productos");
@@ -50,5 +51,6 @@ public class DataBase {
 		while(elemento.hasMoreElements() && keys.hasMoreElements()) {
 			System.out.println("Producto = " + keys.nextElement() + "\nCantidad = " + elemento.nextElement());
 		}
+
 	}
 }

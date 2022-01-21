@@ -1,4 +1,7 @@
 package packageJava.Ejercicio3;
+
+import java.util.Hashtable;
+
 /**@author isabel Calzadilla
  * Ejercicio 3 - UD7: BASE DE DATOS
  * **/
@@ -14,7 +17,7 @@ public class BaseDatosApp {
 
 	public static void main(String[] args) {
 		DataBase.start();
-
+		
 	}
 
 }
