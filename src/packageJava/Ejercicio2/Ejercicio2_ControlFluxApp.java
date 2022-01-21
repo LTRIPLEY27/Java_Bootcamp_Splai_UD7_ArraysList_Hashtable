@@ -93,19 +93,15 @@ Cambio a devolver al cliente*/
 		} else {
 			System.out.println("Hasta pronto...");
 		}
-		
-		//ask.close();
-	
+
 	}
 	
 	public static void printList(List <Double> car) {// MÉTODO PARA IMPRIMIR EL ARRAYLIST CON CADA VALOR
 		
-		//for(int i = 0; i < car.size(); i++) {
 			System.out.println("EL IVA aplicado es = " + car.get(0));
 			System.out.println("EL precio bruto  es = " + car.get(1));
 			System.out.println("EL precio total con IVA es = " + car.get(2));
 			System.out.println("La cantidad a pagar es = " + car.get(3));
 			System.out.println("El vuelto de su pago es = " + car.get(4));
-		//}
 	}
 }

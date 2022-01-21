@@ -7,7 +7,7 @@ public class DataBase {
 	
 	public static void start() {
 	Hashtable <String, Integer> products = new Hashtable <String, Integer> ();
-		for(int i = 0; i <= 4; i++) {
+		for(int i = 0; i <= 9; i++) {
 				String product = JOptionPane.showInputDialog("Indique el producto");
 				String quantity = JOptionPane.showInputDialog("Ingrese cantidad");
 				int cantidad = Integer.parseInt(quantity);
